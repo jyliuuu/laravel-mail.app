@@ -17,9 +17,13 @@ use App\Http\Controllers\EmailSenderController;
 
 Route::get('/', function () {
     return view('email');
-});
+    })->name('home');
 
-Route::get('/contact', 'EmailSenderController@index');
-Route::post('/send/mail', 'EmailSenderController@send');
+Route::get('/send/mail', function () {
+    return view('email-content');
+})->name('preview');
 
-Route::resource('mail', 'EmailSenderController');
+Route::get('/contact', 'EmailSenderController@index')
+    ->name('contact');
+
+Route::post('send/mail', 'EmailSenderController@send');

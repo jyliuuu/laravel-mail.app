@@ -17,11 +17,11 @@ class sendingEmail extends Mailable
      * @return void
      */
 
-    public $emails;
+    public $details;
 
-    public function __construct($emails)
+    public function __construct($details)
     {
-        $this->emails = $emails;
+        $this->details = $details;
     }
 
     /**
@@ -31,8 +31,7 @@ class sendingEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Message from Visitor')
-            ->view('email-sent')
-            ->with('emails', $this->emails);
+        return $this->subject('Mail from jyliu.dev')
+            ->view('email-content');
     }
 }

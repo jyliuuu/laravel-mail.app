@@ -25,17 +25,22 @@ class EmailSenderController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
-            'message' => 'required'
+            'title' => 'required',
+            'message' => 'required',
+            'reasoning' => 'required'
         ]);
 
-        $email = $request->email;
+        $receiver = $request->email;
 
         $data = array(
             'name' => $request->name,
-            'message' => $request->message
+            'title' => $request->title,
+            'message' => $request->message,
+            'reasoning' => $request->reasoning
         );
-        Mail::to('Receiver Email Address')
-            ->send(new sendingEmail($data));
+
+        \Illuminate\Support\Facades\Mail::to($receiver)
+            ->send(new \App\Mail\sendingEmail($data)); //sendingEmail is a different app model
         return back()->with('success', 'Thanks for contacting us!');
     }
 

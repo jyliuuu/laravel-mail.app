@@ -1,4 +1,27 @@
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Epilogue', sans-serif;
     letter-spacing: -0.7px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    min-height: 10vh;
+    align-items: center;
+    margin: auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.nav-links, h2 {
+    flex: 1;
+}
+
+.body-l {
+    min-height: 1920px;
 }

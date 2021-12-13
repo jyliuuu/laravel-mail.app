@@ -6,7 +6,7 @@
 @section('content')
     <p>Hello,</p>
     <p>I decided to write an email to you because I wanted to <strong>{{ $details['reasoning'] }}.</strong></p>
-    <p>My email to you is about the following topic: <strong>{{ $details['title'] }}.</strong></p>
+    <p>Email subject: <strong>{{ $details['title'] }}.</strong></p>
     <p>{{ $details['message'] }}.</p>
     <br>
     <p>It will be helpful if you give me a response soon.</p>

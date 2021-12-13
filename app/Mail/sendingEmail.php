@@ -31,7 +31,7 @@ class sendingEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from jyliu.dev')
+        return $this->subject('From Email.app™ Powered By Laravel')
             ->view('email-content');
     }
 }

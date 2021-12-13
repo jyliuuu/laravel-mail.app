@@ -23,12 +23,13 @@
                 <div data-aos="zoom-in-down" data-aos-duration="550">
                     <div class="alert alert-success alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
+                        <p><strong>{{ $message }}</strong></p>
                     </div>
                 </div>
         @endif
         <div data-aos="zoom-in-down" data-aos-duration="450">
             <h1><strong>Contact Me</strong></h1>
+            <p class="text-muted">The submit button is under the form, it will pop up once it's viewable.</p>
         </div>
     </div>
     <br>
@@ -45,21 +46,24 @@
             <div data-aos="zoom-in-up" data-aos-duration="500">
                 <div class="form-group">
                     <label for="name">Your Full Name</label><br>
-                    <input type="text" name="name" style="min-width: 100%" placeholder="Enter your full name">
+                    <input type="text" name="name" style="min-width: 100%; text-transform: capitalize;">
+                    <p class="text-muted">It is always good to let the receiver know, who's contacting them.</p>
                 </div>
                 <div class="form-group">
                     <label for="email">Receiver's Email</label><br>
-                    <input type="email" name="email" style="min-width: 100%" placeholder="Enter email address">
+                    <input type="email" name="email" style="min-width: 100%">
+                    <p class="text-muted">The person's email address, so that the receiver can <strong>receive</strong> it.</p>
                 </div>
                 <div class="form-group">
                     <label for="title">Email Topic</label><br>
-                    <input type="text" name="title" style="min-width: 100%" placeholder="Enter your mail Topic">
+                    <input type="text" name="title" style="min-width: 100%">
+                    <p class="text-muted">What is the email about?</p>
                 </div>
             </div>
             <div data-aos="zoom-in-up" data-aos-duration="600">
                 <div class="form-group">
-                    <label for="message">Content</label>
-                    <textarea class="text-area text-box multi-line" name="message" placeholder="Enter content here" data-val="true" data-val-length="Maximum = 2045 characters" data-val-length-max="2045" id="info" name="info" cols="121" rows="10"></textarea>
+                    <label for="message">Content</label><br>
+                    <textarea class="text-area text-box multi-line" style="text-transform: capitalize;" name="message" data-val="true" data-val-length="Maximum = 2045 characters" data-val-length-max="2045" id="info" name="info" cols="148" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="reasoning">Reasoning</label>
@@ -69,6 +73,7 @@
                         <option>purpose a business meeting</option>
                         <option>declare something privately</option>
                     </select>
+                    <p class="text-muted">Give a reason why you're contacting me.</p>
                 </div>
             </div>
             <div data-aos="zoom-in-up" data-aos-duration="700">

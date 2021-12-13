@@ -1,4 +1,4 @@
-* {
+h2, p, li, h1, label, option, select {
     font-family: 'Epilogue', sans-serif;
     letter-spacing: -0.7px;
 }
@@ -22,6 +22,24 @@ nav {
     flex: 1;
 }
 
+.home-header {
+    font-size: 1000%;
+    letter-spacing: -10px;
+    line-height: 90%;
+}
+
 .body-l {
     min-height: 1920px;
+}
+
+.body-m {
+    min-height: 960px;
+}
+
+.fs-s {
+    min-height: 50px;
+}
+
+.fs-m {
+    min-height: 100px;
 }

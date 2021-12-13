@@ -23,6 +23,10 @@ Route::get('/send/mail', function () {
     return view('email-content');
 })->name('preview');
 
+Route::get('/home', function () {
+    return view('home');
+})->name('preview');
+
 Route::get('/contact', 'EmailSenderController@index')
     ->name('contact');
 

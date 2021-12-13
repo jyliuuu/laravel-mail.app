@@ -41,7 +41,7 @@ class EmailSenderController extends Controller
 
         \Illuminate\Support\Facades\Mail::to($receiver)
             ->send(new \App\Mail\sendingEmail($data)); //sendingEmail is a different app model
-        return back()->with('success', 'Thanks for contacting us!');
+        return back()->with('success', 'Thanks for contacting me!');
     }
 
     /**

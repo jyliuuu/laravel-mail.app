@@ -3,6 +3,7 @@
 $x = 0; //0 = not mail template -- 1 = yes mail template = yes navbar gone
 ?>
 @section('content')
+<div class="fs-s"></div>
     <body class="body-m">
         <div class="container" style="width:65%">
             @if (count($errors) > 0)

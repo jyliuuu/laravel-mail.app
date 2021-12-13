@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\EmailSenderController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('email');
 });
+
+Route::get('/contact', 'EmailSenderController@index');
+Route::post('/send/mail', 'EmailSenderController@send');
+
+Route::resource('mail', 'EmailSenderController');

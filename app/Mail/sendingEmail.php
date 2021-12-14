@@ -7,6 +7,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
+use Illuminate\Database\Eloquent\Model;
+
 class sendingEmail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -31,7 +33,7 @@ class sendingEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('From Email.app™ Powered By Laravel')
+        return $this->subject('Email.app Powered By Laravel')
             ->view('email-content');
     }
 }

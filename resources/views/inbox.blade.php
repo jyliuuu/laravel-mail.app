@@ -7,7 +7,7 @@ $x = 0; //0 = not mail template -- 1 = yes mail template = yes navbar gone
     <head>
         <title>Contact Us Form</title>
     </head>
-    <div class="fs-s"></div>
+    <div class="fs-m"></div>
     <body class="body-l">
         <div class="container">
             <div data-aos="zoom-in-down" data-aos-duration="700">
@@ -51,7 +51,7 @@ $x = 0; //0 = not mail template -- 1 = yes mail template = yes navbar gone
                                             {{ $email->fromName }}
                                         </a>
                                     </h2>
-                                    <h2 class="email-date text-muted">{{ substr($email->headers->date, 0, -5)}}</h2>
+                                    <h2 class="email-date text-muted">{{ $email->headers->date}}</h2>
                                 </div>
                                 <div class="col-12 col-md-auto">
                                     <div>

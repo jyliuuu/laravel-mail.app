@@ -21,9 +21,8 @@ Route::get('/', function () {
     return view('email');
     })->name('home');
 
-Route::get('/send/mail', function () {
-    return view('email-content');
-})->name('preview');
+
+Route::post('send/reply', [EmailSenderController::class, 'reply']);
 
 Route::get('/home', function () {
     return view('home');

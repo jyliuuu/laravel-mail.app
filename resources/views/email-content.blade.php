@@ -4,9 +4,15 @@
 ?>
 
 @section('content')
+    <h1>Subject: <strong>{{ $details['title'] }}.</strong></h1>
     <p>Hello,</p>
-    <p>I decided to write an email to you because I wanted to <strong>{{ $details['reasoning'] }}.</strong></p>
-    <p>Email subject: <strong>{{ $details['title'] }}.</strong></p>
+    @isset($details['reasoning'])
+        @if (is_null($details['reasoning']))
+            <br>
+        @else
+            <p>I decided to write an email to you because I wanted to <strong>{{ $details['reasoning'] }}.</strong></p>
+        @endif
+    @endisset
     <p>{{ $details['message'] }}.</p>
     <br>
     <p>It will be helpful if you give me a response soon.</p>

@@ -3,6 +3,12 @@ h2, p, li, h1, label, option, select {
     letter-spacing: -0.7px;
 }
 
+textarea {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -78,6 +84,14 @@ nav {
     border-width: 2px;
     min-width: 900px;
     padding: 4%;
+}
+
+.reply-border {
+    border-radius: 25px;
+    border: 2px solid black;
+    border-width: 2px;
+    min-width: 900px;
+    padding: 2%;
 }
 
 .body-l {

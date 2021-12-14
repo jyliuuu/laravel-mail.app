@@ -44,6 +44,28 @@ class EmailSenderController extends Controller
         return back()->with('success', 'Thanks for contacting me!');
     }
 
+    public function reply(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'title' => 'required',
+            'message' => 'required',
+        ]);
+
+        $receiver = $request->email;
+
+        $data = array(
+            'name' => $request->name,
+            'title' => $request->title,
+            'message' => $request->message,
+        );
+
+        \Illuminate\Support\Facades\Mail::to($receiver)
+            ->send(new \App\Mail\sendingEmail($data)); //sendingEmail is a different app model
+        return back()->with('success', 'Thanks for contacting me!');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

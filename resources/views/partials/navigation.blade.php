@@ -5,9 +5,12 @@
             <a href="{{ url('/home') }}">Home</a>
         </li>
         <li data-aos="fade-up" data-aos-delay="400">
-            <a href="{{ url('/contact') }}">Contact</a>
+            <a href="{{ url('/inbox') }}">Inbox</a>
         </li>
         <li data-aos="fade-up" data-aos-delay="500">
+            <a href="{{ url('/contact') }}" id="form-button">Contact</a>
+        </li>
+        <li data-aos="fade-up" data-aos-delay="600">
             <a href="{{ url('/about') }}">About</a>
         </li>
     </ul>

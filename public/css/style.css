@@ -28,6 +28,42 @@ nav {
     line-height: 90%;
 }
 
+.email-sender-bg {
+    background: lightgrey;
+    width: 750px;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.email-header {
+    font-size: 220%;
+}
+
+.email-sender {
+    font-size: 110%;
+}
+
+.email-content {
+    margin-top: 5%;
+    text-align: right;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.email-content2 {
+    margin-top: 5%;
+    text-align: left;
+}
+
+.email-content3 {
+    text-align: left;
+}
+
+.email-date {
+    font-size: 90%;
+    text-align: left;
+}
+
 .form-border {
     border-radius: 25px;
     border: 2px solid black;
@@ -36,13 +72,25 @@ nav {
     display: inline-block;
 }
 
+.email-border {
+    border-radius: 25px;
+    border: 2px solid black;
+    border-width: 2px;
+    min-width: 900px;
+    padding: 4%;
+}
+
 .body-l {
     min-height: 1920px;
-    
+
 }
 
 .body-m {
     min-height: 960px;
+}
+
+.fs-xs {
+    min-height: 15px;
 }
 
 .fs-s {

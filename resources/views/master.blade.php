@@ -14,6 +14,8 @@
 
 <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
 
+<script src="{{ URL::to('js/button.js') }}"></script>
+
 {{--fonts--}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

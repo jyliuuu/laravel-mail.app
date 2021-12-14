@@ -7,7 +7,7 @@
     <title>Contact Us Form</title>
 </head>
 <body class="body-l">
-    <div class="container">
+    <div class="container" style="margin-left: 14%;">
         <div class="form-border" data-aos="zoom-in-down" data-aos-duration="700">
             @if (count($errors) > 0)
                 <div data-aos="zoom-in-down" data-aos-duration="550">

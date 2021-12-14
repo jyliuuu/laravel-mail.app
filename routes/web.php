@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EmailSenderController;
 
+use App\Http\Controllers\InboxController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +27,18 @@ Route::get('/send/mail', function () {
 
 Route::get('/home', function () {
     return view('home');
-})->name('preview');
+});
 
-Route::get('/contact', 'EmailSenderController@index')
+Route::get('/inbox', [InboxController::class, 'index']);
+Route::resource('inbox', 'InboxController');
+
+Route::get('/inbox/email', [InboxController::class, 'show']);
+Route::resource('inbox/email', 'InboxController');
+
+Route::get('/contact', [EmailSenderController::class, 'index'])
     ->name('contact');
 
-Route::post('send/mail', 'EmailSenderController@send');
+Route::post('send/mail', [EmailSenderController::class, 'send']);
+
+//Route::get('/inbox', [InboxController::class, 'index'])
+//    ->name('inbox');

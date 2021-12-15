@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TextScan;
 use Illuminate\Http\Request;
 use PhpImap\Mailbox;
 use PhpImap\Exceptions\ConnectionException;
+
+use voku\helper\HtmlDomParser;
+
 
 class InboxController extends Controller
 {
@@ -15,14 +19,16 @@ class InboxController extends Controller
      */
     public function index()
     {
+        $username = \config('example.IMAP_USERNAME');
+        $password = \config('example.IMAP_PASSWORD');
         // Connect to server imap.gmail.com via SSL on port 993 and open the 'INBOX' folder
         // Authenticate with the username / email address 'some@gmail.com'
         // Save attachments to the directory '__DIR__'
         // Set server encoding to 'US-ASCII'
         $mailbox = new Mailbox(
             '{imap.gmail.com:993/imap/ssl}INBOX', // IMAP server and mailbox folder
-            $_ENV['IMAP_USERNAME'], // Username for the before configured mailbox
-            $_ENV['IMAP_PASSWORD'], // Password for the before configured username
+            $username, // Username for the before configured mailbox
+            $password, // Password for the before configured username
             __DIR__, // Directory, where attachments will be saved (optional)
             'US-ASCII', // Server encoding (optional)
             sys_get_temp_dir() // Directory, where attachments will be saved (optional)
@@ -85,14 +91,16 @@ class InboxController extends Controller
      */
     public function show($id)
     {
+        $username = \config('example.IMAP_USERNAME');
+        $password = \config('example.IMAP_PASSWORD');
         // Connect to server imap.gmail.com via SSL on port 993 and open the 'INBOX' folder
         // Authenticate with the username / email address 'some@gmail.com'
         // Save attachments to the directory '__DIR__'
         // Set server encoding to 'US-ASCII'
         $mailbox = new Mailbox(
             '{imap.gmail.com:993/imap/ssl}INBOX', // IMAP server and mailbox folder
-            $_ENV['IMAP_USERNAME'], // Username for the before configured mailbox
-            $_ENV['IMAP_PASSWORD'], // Password for the before configured username
+            $username, // Username for the before configured mailbox
+            $password, // Password for the before configured username
             __DIR__, // Directory, where attachments will be saved (optional)
             'US-ASCII', // Server encoding (optional)
             sys_get_temp_dir() // Directory, where attachments will be saved (optional)

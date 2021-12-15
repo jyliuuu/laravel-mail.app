@@ -6,6 +6,8 @@ use App\Http\Controllers\EmailSenderController;
 
 use App\Http\Controllers\InboxController;
 
+use App\Http\Controllers\ParseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +20,8 @@ use App\Http\Controllers\InboxController;
 */
 
 Route::get('/', function () {
-    return view('email');
-    })->name('home');
+    return view('home');
+})->name('home');
 
 
 Route::post('send/reply', [EmailSenderController::class, 'reply']);
@@ -34,10 +36,10 @@ Route::resource('inbox', 'InboxController');
 Route::get('/inbox/email', [InboxController::class, 'show']);
 Route::resource('inbox/email', 'InboxController');
 
+Route::get('/view/obj', [ParseController::class, 'store']);
+Route::resource('/view/obj', 'ParseController');
+
 Route::get('/contact', [EmailSenderController::class, 'index'])
     ->name('contact');
 
 Route::post('send/mail', [EmailSenderController::class, 'send']);
-
-//Route::get('/inbox', [InboxController::class, 'index'])
-//    ->name('inbox');

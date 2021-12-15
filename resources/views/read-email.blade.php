@@ -38,17 +38,15 @@ $email = $mailbox->getMail(
         <div class="row email-border" data-aos="zoom-in-up" data-aos-duration="450">
             <div class="col-12 col-md">
                 <h2 style="font-size: 200%; word-wrap: break-word">
-                    <?php
-                    if($email->textHtml) {
-                        echo $email->textHtml;
-                    } else {
-                        echo $email->textPlain;
-                    }
-                    ?>
+                    @if($email->textHtml)
+                        <?= $email->textHtml; ?>
+                    @else
+                        <?= $email->textPlain; ?>
+                    @endif
                 </h2>
             </div>
         </div>
-        <div class="fs-xs"></div>
+    <div class="fs-xs"></div>
         <div class="row reply-border" data-aos="fade-up" data-aos-duration="200">
             <div class="container">
                 <div class="col-12 col-md">
@@ -72,12 +70,40 @@ $email = $mailbox->getMail(
                                           id="info" name="info" cols="125" rows="10"></textarea>
                             </div>
                             <div class="d-table-cell align-middle">
-{{--                                input hidden .name moet later een auth:logged-in user full name hebben uit DB--}}
                                 <input type="hidden" name="name" value="{{ $email->toString }}">
                                 <input type="hidden" name="email" value="{{ $email->fromAddress }}">
                                 <button type="submit" class="btn-lg btn-dark"><i class="fas fa-reply"></i></button>
                             </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div class="fs-xs"></div>
+        <div class="row reply-border" data-aos="fade-up" data-aos-duration="200">
+            <div class="container">
+                <div class="col-12 col-md">
+                        <div class="form-group">
+                            <label><strong>Dev Tools:</strong></label>
+                            <div class="d-table-cell align-middle">
+                                <p id='demo' style="display: none; background-color: ghostwhite;
+                                min-width: 500px; font-size: 80%;" class="reply-border">
+                                    {{ $email->textHtml }}
+                                </p>
+                                <button type='button' class="btn btn-primary" onclick="toggleText()">See .RAW</button>
                             </div>
+                        <br>
+                            <form action="{{ action('ParseController@store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <input type="hidden" name="html" value="{{ $email->textHtml }}">
+                                        <button type="submit" class="btn btn-danger">See pulled objects</button>
+                                    </div>
+                                </div>
+                            </form>
+
+
                         </div>
                     </form>
                 </div>
@@ -87,7 +113,7 @@ $email = $mailbox->getMail(
 </body>
 
 <?php
-    // Disconnect from mailbox
+// Disconnect from mailbox
     $mailbox->disconnect();
 ?>
 @endsection

@@ -1,3 +1,8 @@
-document.getElementById('form-button').onclick = function () {
-    this.disabled = true;
+function toggleText() {
+    var text = document.getElementById("demo");
+    if (text.style.display === "none") {
+        text.style.display = "block";
+    } else {
+        text.style.display = "none";
+    }
 }

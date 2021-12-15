@@ -5,7 +5,7 @@ $x = 0; //0 = not mail template -- 1 = yes mail template = yes navbar gone
 ?>
 @section('content')
     <head>
-        <title>Contact Us Form</title>
+        <title>Inbox</title>
     </head>
     <div class="fs-m"></div>
     <body class="body-l">

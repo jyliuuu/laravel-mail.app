@@ -1,5 +1,11 @@
-h2, p, li, h1, label, option, select {
-    font-family: 'Epilogue', sans-serif;
+h2,
+p,
+li,
+h1,
+label,
+option,
+select {
+    font-family: "Epilogue", sans-serif;
     letter-spacing: -0.7px;
 }
 
@@ -24,7 +30,8 @@ nav {
     list-style: none;
 }
 
-.nav-links, h2 {
+.nav-links,
+h2 {
     flex: 1;
 }
 
@@ -96,7 +103,6 @@ nav {
 
 .body-l {
     min-height: 1920px;
-
 }
 
 .body-m {

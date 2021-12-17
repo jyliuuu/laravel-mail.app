@@ -3,7 +3,8 @@
 $x = 0; //0 = not mail template -- 1 = yes mail template = yes navbar gone
 ?>
 @section('content')
-<div class="fs-s"></div>
+    <div class="fs-s"></div>
+
     <body class="body-m">
         <div class="container" style="width:65%">
             @if (count($errors) > 0)
@@ -27,7 +28,7 @@ $x = 0; //0 = not mail template -- 1 = yes mail template = yes navbar gone
             @endif
             <div data-aos="fade-down" data-aos-duration="450">
                 <h1 class="home-header"><strong>Send emails,<br>
-                    simple & easy.</strong></h1>
+                        simple & easy.</strong></h1>
                 <div class="fs-s"></div>
                 <p class="text-muted">It's shouldn't be any harder than it already is.</p>
             </div>
